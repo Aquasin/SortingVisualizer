@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Import for CSS -->
+    <link rel="stylesheet" href="index.css" />
+    <!-- Import for scripts avaliable on net -->
+    <!-- Import for Darkmode.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script defer>
+        function addDarkmodeWidget() {
+            const options = {
+                bottom: '64px', // default: '32px'
+                left: 'unset', // default: '32px'
+                right: '32px', // default: 'unset'
+                time: '0.5s', // default: '0.3s'
+                mixColor: '#eeeeee', // default: '#fff'
+                backgroundColor: '#eeeeee',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: false // default: true
+            }
+
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        }
+        window.addEventListener('load', addDarkmodeWidget);
+    </script>
+    <title>Sorting Visualizer</title>
+</head>
+
+<body>
+    <div id="sorting-container"></div>
+    <div class="functionContainer">
+        <div class="speedContainer">
+            <div id="speedText">Speed</div>
+            <input type="range" id="speed" min="20" max="320" step="50" onchange="displaySpeed()">
+        </div>
+        <div class="buttonContainer">
+            <button class="btn" onclick="generateArray()">Generate Array</button>
+            <div class="sortingAlgo">
+                <button class="btn" onclick="bubbleSort()">Bubble Sort</button>
+                <button class="btn" onclick="selectionSort()">Selection Sort</button>
+                <button class="btn" onclick="quickSort()">Quick Sort</button>
+                <button class="btn" onclick="mergeSort()">Merge Sort</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts for Helper Fns  -->
+    <script src="./Scripts/helper.js"></script>
+    <!-- Scripts for Sorting Fns  -->
+    <script src="./Scripts/Algorithms/bubbleSort.js"></script>
+    <script src="./Scripts/Algorithms/selectionSort.js"></script>
+    <script src="./Scripts/Algorithms/quickSort.js"></script>
+    <script src="./Scripts/Algorithms/mergeSort.js"></script>
+    <!-- Main Script -->
+    <script src="./Scripts/index.js"></script>
+</body>
+
+</html>
