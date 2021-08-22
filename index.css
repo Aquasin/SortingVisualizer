@@ -17,6 +17,11 @@ body {
 .array-element {
 	margin: 0 2px;
 	background-color: #121212;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	padding-bottom: 4px;
+	/* vertical-align: bottom; */
 }
 
 .functionContainer {
@@ -28,7 +33,7 @@ body {
 	flex-direction: column;
 	align-items: center;
 	padding: 10px 0;
-	/* height: 80px; */
+	/* height: 70px; */
 }
 
 .speedContainer {

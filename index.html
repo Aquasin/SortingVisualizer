@@ -39,9 +39,9 @@
     <div class="functionContainer">
         <div class="speedContainer">
             <div id="speedText">Speed</div>
-            <input type="range" id="speed" min="20" max="320" step="50" onchange="displaySpeed()">
+            <input type="range" id="speed" min="20" max="320" step="50">
         </div>
-        <div class="buttonContainer">
+        <div class=" buttonContainer">
             <button class="btn" onclick="generateArray()">Generate Array</button>
             <div class="sortingAlgo">
                 <button class="btn" onclick="bubbleSort()">Bubble Sort</button>
@@ -54,13 +54,13 @@
 
     <!-- Scripts for Helper Fns  -->
     <script src="./Scripts/helper.js"></script>
+    <!-- Main Script -->
+    <script src="./Scripts/index.js"></script>
     <!-- Scripts for Sorting Fns  -->
     <script src="./Scripts/Algorithms/bubbleSort.js"></script>
     <script src="./Scripts/Algorithms/selectionSort.js"></script>
     <script src="./Scripts/Algorithms/quickSort.js"></script>
     <script src="./Scripts/Algorithms/mergeSort.js"></script>
-    <!-- Main Script -->
-    <script src="./Scripts/index.js"></script>
 </body>
 
 </html>
