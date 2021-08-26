@@ -11,4 +11,5 @@
 
 3. Adjustable speed bar to adjust the speed of Sorting.
 
-This Website is hosted on Netlify. Link - https://sorting-visualizer-webapp.netlify.app/
+The Website is hosted on Netlify. 
+Link - https://sorting-visualizer-webapp.netlify.app/
