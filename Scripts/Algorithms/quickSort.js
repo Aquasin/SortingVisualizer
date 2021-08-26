@@ -2,7 +2,6 @@ const quickSort = async () => {
 	// Disable all buttons
 	disableAllButtons();
 	quickButton.style.borderBottom = "2px solid #fff";
-	// console.log(sortArray);
 
 	await quick(0, sortArray.length - 1);
 
@@ -12,17 +11,10 @@ const quickSort = async () => {
 		iBar.style.backgroundColor = "blue";
 	}
 
-	// console.log(sortArray);
 	// Enable all buttons
 	enableAllButtons();
 	quickButton.style.borderBottom = "none";
 };
-
-// const swap = (a, b) => {
-// 	const temp = sortArray[a];
-// 	sortArray[a] = sortArray[b];
-// 	sortArray[b] = temp;
-// };
 
 const partition = async (left, right) => {
 	let pivot = sortArray[right];
@@ -34,6 +26,7 @@ const partition = async (left, right) => {
 
 	for (let j = left; j < right; j++) {
 		let jBar = document.getElementsByClassName("array-element")[j];
+		jBar.style.backgroundColor = "yellow";
 		if (sortArray[j] < pivot) {
 			i++;
 			let iBar = document.getElementsByClassName("array-element")[i];
@@ -47,28 +40,40 @@ const partition = async (left, right) => {
 			iBar.style.height = jBar.style.height;
 			jBar.style.height = temp;
 
+			// To change the value of swapped bars
+			const value = iBar.innerHTML;
+			iBar.innerHTML = jBar.innerHTML;
+			jBar.innerHTML = value;
+
 			await waitForNextLine();
 			swap(sortArray, i, j);
 			iBar.style.backgroundColor = "#121212";
 			jBar.style.backgroundColor = "#121212";
 			await waitForNextLine();
 		}
-		jBar.style.backgroundColor = "#121212";
 		await waitForNextLine();
+		jBar.style.backgroundColor = "#121212";
 	}
-	await waitForNextLine();
 	iBar = document.getElementsByClassName("array-element")[i + 1];
 	jBar = document.getElementsByClassName("array-element")[right];
 	iBar.style.backgroundColor = "red";
 	jBar.style.backgroundColor = "red";
+	await waitForNextLine();
 
 	const temp = iBar.style.height;
 	iBar.style.height = jBar.style.height;
 	jBar.style.height = temp;
 
-	pivotBar.style.backgroundColor = "#121212";
+	// To change the value of swapped bars
+	const value = iBar.innerHTML;
+	iBar.innerHTML = jBar.innerHTML;
+	jBar.innerHTML = value;
+
+	iBar.style.backgroundColor = "#121212";
+	jBar.style.backgroundColor = "#121212";
 	await waitForNextLine();
 	swap(sortArray, i + 1, right);
+
 	return i + 1;
 };
 

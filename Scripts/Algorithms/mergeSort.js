@@ -79,5 +79,7 @@ const merge = async (start, mid, end) => {
 		let kBar = document.getElementsByClassName("array-element")[i];
 		kBar.style.backgroundColor = color;
 		kBar.style.height = `${sortArray[i]}px`;
+		// To change the value of swapped bars
+		kBar.innerHTML = `${sortArray[i]}`;
 	}
 };

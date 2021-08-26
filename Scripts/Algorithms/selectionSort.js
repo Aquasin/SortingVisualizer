@@ -28,9 +28,16 @@ const selectionSort = async () => {
 		}
 		minBar = document.getElementsByClassName("array-element")[minHeight];
 		swap(sortArray, i, minHeight);
+		// To change the height of swapped bars
 		const H = bar1.style.height;
 		bar1.style.height = minBar.style.height;
 		minBar.style.height = H;
+
+		// To change the value of swapped bars
+		const value = bar1.innerHTML;
+		bar1.innerHTML = minBar.innerHTML;
+		minBar.innerHTML = value;
+
 		minBar.style.backgroundColor = "#121212";
 		bar1.style.backgroundColor = "blue";
 	}

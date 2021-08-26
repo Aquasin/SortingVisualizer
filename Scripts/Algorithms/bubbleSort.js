@@ -19,9 +19,14 @@ const bubbleSort = async () => {
 				bar1.style.backgroundColor = "green";
 				bar2.style.backgroundColor = "green";
 				swap(sortArray, j, j + 1);
+				// To change the height of swapped bars
 				const H = bar1.style.height;
 				bar1.style.height = bar2.style.height;
 				bar2.style.height = H;
+				// To change the value of swapped bars
+				const value = bar1.innerHTML;
+				bar1.innerHTML = bar2.innerHTML;
+				bar2.innerHTML = value;
 			}
 			await waitForNextLine();
 			bar1.style.backgroundColor = "#121212";
